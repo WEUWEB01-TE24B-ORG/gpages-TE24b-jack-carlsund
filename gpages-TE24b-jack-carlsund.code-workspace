@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"name": "gpages-TE24b-jack-carlsund",
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.iconTheme": "vscode-great-icons",
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#3B1D61",
+			"titleBar.activeBackground": "#532888",
+			"titleBar.activeForeground": "#FBF9FD"
+		},
+		"sessionlogger.enabled": false,
+		"explorer.compactFolders": false,
+		"explorer.sortOrderLexicographicOptions": "unicode",
+		"workbench.editorAssociations": {
+			"*.md": "vscode.markdown.preview.editor"
+		}
+	}
+}
