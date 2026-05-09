@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Vast+Shadow&display=swap');
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Färgvariabler som jag har importat */
+:root {
+
+    /* CSS HEX */
+    --dust-grey: #dad7cdff;
+    --dry-sage: #a3b18aff;
+    --fern: #588157ff;
+    --hunter-green: #3a5a40ff;
+    --pine-teal: #344e41ff;
+}
+
+/* Bakgrundsbild för hela sidan */
+body {
+    background-image: url(./bilder/e009845d-e607-4663-ae19-06dd50240ca7.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Huvudcontainer */
+.kontainer {
+
+    /* 1vw = 1% av fönstrets bredd */
+    max-width: 70vw;
+    margin: auto;
+    background-color: var(--fern);
+    margin-top: 3rem;
+
+    /* 1rem = 16px */
+    padding: 3rem;
+
+    border-radius: 0.3125rem;
+    border-color: var(--hunter-green);
+    border: 0.625rem solid;
+
+    /* Grid-layout */
+    grid-template-areas:
+        "sidhuvud sidhuvud"
+        "innehåll sidebar"
+        "sidfot sidfot";
+
+    display: grid;
+}
+
+/* Header högst upp på hemsidan*/
+.kontainer header {
+    border: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    grid-area: sidhuvud;
+    align-items: center;
+    height: 6.25rem;
+}
+
+/* Navigationsmenyn som finns i header */
+.kontainer header nav {
+    display: flex;
+    gap: 5rem;
+    margin-left: 11rem;
+    padding: 1rem;
+    width: fit-content;
+}
+
+/* Detta är för att göra bilden rund som ligger i header */
+.kontainer header .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    border-color: var(--hunter-green);
+}
+
+/* Navigationsknappar för att ta sig till andra hemsidor */
+.kontainer header nav a {
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    background-color: var(--hunter-green);
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Hovereffekt som gör att knapparna ändrar färg när du har muspekaren över */
+.kontainer header nav a:hover {
+    color: white;
+}
+
+/* Markerar den aktiva sidan som användaren är på */
+.kontainer header nav a.aktiv {
+    background-color: var(--dust-grey);
+}
+
+/* Allt innehåll ligger i main*/
+.kontainer main {
+    margin-top: 6rem;
+    border: 1px solid black;
+    grid-area: innehåll;
+}
+
+/* Rubriken över hala hemsidan som säger vilket djur det är */
+.kontainer main h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Funnel Sans", sans-serif;
+}
+
+/* Detta är bilderna och texterna som ligger i art classen*/
+.kontainer main .art {
+    display: flex;
+    justify-content: center;
+}
+
+/* Bild i art classen*/
+.kontainer main .art img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 70%;
+    border: 0.625rem solid;
+    border-color: var(--hunter-green);
+}
+
+/* Detta är texterna till bilderna*/
+.kontainer main .art figcaption {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+/* Detta gör att subarterna blir i tre kolumner  */
+.kontainer main article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 4rem;
+}
+
+/* Detta centrerar texten i figure*/
+.kontainer main article figure {
+    text-align: center;
+}
+
+/* Detta är rubrikerna i artiklarna */
+.kontainer main article h2 {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    font-family: "Funnel Sans", sans-serif;
+}
+
+/* Detta är bilderna i artiklarna */
+.kontainer main article figure img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 70%;
+    border: 0.625rem solid;
+    border-color: var(--hunter-green);
+}
+
+/* För texterna under bilderna */
+.kontainer main article figure p {
+    text-align: center;
+    padding-top: 2rem;
+    font-family: "Funnel Sans", sans-serif;
+}
+
+/* Detta är för video rutan*/
+.kontainer main .video-lada {
+    display: none;
+    background-color: var(--hunter-green);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Sidebaren som kommer vara vid sidan av main */
+.kontainer aside {
+    grid-area: sidebar;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 1rem;
+    height: 15rem;
+    width: 10rem;
+}
+
+/* Rubriken i sidebaren */
+.kontainer aside h3 {
+    margin-top: 0.625rem;
+    margin-left: 0.625rem;
+      font-family: "Funnel Sans", sans-serif;
+}
+
+/* Footer, rutan längst ned där det står publicerad av...*/
+.kontainer footer {
+    grid-area: sidfot;
+    border: 1px solid black;
+    width: 50vw;
+    font-size: 3rem;
+    text-align: center;
+    margin: 6.25rem auto 0 auto;
+    border-radius: 4px;
+}
+
+.video-frame {
+    width: 100%;
+    border: none;
+}
+
+/* Videon */
+.kontainer .video {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Detta är för video knappen */
+.kontainer .video button {
+    width: 20rem;
+    text-align: center;
+    font-size: 3rem;
+    border-radius: 4px;
+    background-color: var(--hunter-green);
+}
+
+/* Hovereffekt för video knappen */
+button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* Det här är för listan i sidebaren */
+.kontainer aside ul li {
+    margin-left: 1.8rem;
+    line-height: 1.8;
+}
+
+/* För att göra den responsiv för mobilen, mycket av koden för responsive layout har jag kollat upp på google och youtbe*/
+@media (max-width: 678px) {
+
+    /* Här är kontainern */
+    .kontainer {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;
+
+        /* Byter från grid till flex */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* För att fixa header */
+    .kontainer header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 1rem;
+    }
+
+    /* För att fixa nav */
+    .kontainer header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Här är alla meny knappar */
+    .kontainer header nav a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    /* Själva innehållet i main */
+    .kontainer main {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    /* H1/reubrik */
+    .kontainer main h1 {
+        margin-left: 0;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    /*Fixar bilderna och texterna som ligger i art*/
+    .kontainer main .art {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    /* Fixar bildernas storlekar */
+    .kontainer main .art img,
+    .kontainer main article figure img {
+        width: 80%;
+        height: auto;
+    }
+
+    /* Text under den stora runda djur bilden */
+    .kontainer main .art figcaption{
+        margin-left: 0;
+        font-size: 1rem;
+    }
+
+    /* Artiklarna, de staplas på varandra */
+    .kontainer main article {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* Sidebaren */
+    .kontainer aside {
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+
+    /* Footer */
+    .kontainer footer {
+        width: 100%;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    /* Fixar video knappen */
+    .kontainer .video button {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsivitet för tablet*/
+@media (min-width: 679px) and (max-width: 1024px) {
+
+    /* Gör kontainern bredare på tablet */
+    .kontainer {
+        max-width: 95vw;
+        width: 95%;
+        margin: 1rem auto;
+        padding: 2rem;
+    }
+
+    /* Headern centreras */
+    .kontainer header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    /* Navigerings menyn kommer centreras */
+    .kontainer header nav {
+        margin-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    /* Gör texten mindre än på desktop */
+    .kontainer header nav a {
+        font-size: 1.5rem;
+    }
+
+    /* Rubriken centreras */
+    .kontainer main h1 {
+        margin-left: 0;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    /* Behåller 3 kolumner men en kommer sjutas ned */
+    .kontainer main article {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    /* Gör att bilderna anpassas och blir responsiva */
+    .kontainer main article figure img,
+    .kontainer main .art img,
+    .kontainer main .krokodil img {
+        width: 90%;
+        height: auto;
+    }
+
+    /* Detta gör att bild och text kommer stapplas */
+    .kontainer main .art,
+    .kontainer main .krokodil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Sidebaren centreras */
+    .kontainer aside {
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+
+    /* Gör att footern anpassas */
+    .kontainer footer {
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    /* Knappen blir bredare */
+    .kontainer .video button {
+        width: 80%;
+    }
+}
